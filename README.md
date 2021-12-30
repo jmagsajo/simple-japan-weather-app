@@ -1,6 +1,6 @@
 # simple-japan-weather-app
 
-**to run the app run the ff:
+**to run the app run the ff:**
 <p>composer install</p>
 <p>npm install</p>
 

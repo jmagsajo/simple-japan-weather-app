@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card weather-card">
                     
                     <div class="card-header">Weather Forrcast</div>
 
@@ -94,5 +94,8 @@
 <style scoped>
 .result {
   margin-top: 100px;
+}
+.weather-card{
+    margin-top: 30px;
 }
 </style>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card venue-card">
                     <div class="card-header">Search Venues</div>
 
                     <div class="card-body">
@@ -76,5 +76,8 @@
 <style scoped>
 .result {
   margin-top: 100px;
+}
+.venue-card{
+    margin-top: 30px;
 }
 </style>

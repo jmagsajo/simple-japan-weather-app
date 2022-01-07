@@ -15,9 +15,5 @@ use App\Http\Controllers\API\WeatherController;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
 Route::post('/venue', [VenueController::class, 'index']);
 Route::post('/weather', [WeatherController::class, 'index']);

@@ -3,7 +3,7 @@ namespace App\Http\Traits;
 
 trait Locations {
     
-    public function getLonLat($id) {
+    public function getLonLat(int $id) {
         
         $cities = [
             1 => [
@@ -38,7 +38,7 @@ trait Locations {
             ]
         ];
 
-        return $cities[$id];
+        return (object) $cities[$id];
 
     }
 

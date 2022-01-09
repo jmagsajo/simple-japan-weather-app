@@ -19,7 +19,7 @@ class VenueService
         $this->ll = env("VENUE_LL");
     }
 
-    public function findPlace($search){
+    public function findPlace(string $search){
         $client = new Client(["base_uri" => $this->base_uri]);
 
         $payload = [ "query" => 

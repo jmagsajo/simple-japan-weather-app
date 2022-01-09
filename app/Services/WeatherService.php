@@ -12,23 +12,23 @@ class WeatherService
     use Responser;
     use Locations;
     public $base_uri;
-    public $appid;
+    public $app_id;
 
     public function __construct(){
         $this->base_uri = env("WEATHER_BASE_URI");
-        $this->appid = env("WEATHER_APP_ID"); 
+        $this->app_id = env("WEATHER_APP_ID"); 
     }
     
-    public function searchWeather($id){
+    public function searchWeather(int $id){
         $client = new Client(["base_uri" => $this->base_uri]);
 
-        $getLocation = $this->getLonLat($id);
+        $get_location = $this->getLonLat($id);
         
         $payload = [ "query" => 
             [
-                "lat" => $getLocation["lat"],
-                "lon" => $getLocation["lon"],
-                "appid" => $this->appid,
+                "lat" => $get_location->lat,
+                "lon" => $get_location->lon,
+                "appid" => $this->app_id,
             ]
         ];
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Library;
+namespace App\Services;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
@@ -9,9 +9,15 @@ use App\Http\Traits\Responser;
 class VenueService
 {
     use Responser;
-    public $base_uri = "https://api.foursquare.com/v3/";
-    public $headers = [ "Authorization" => "fsq3BOP9lt2VvSCKlOSu1uzFiybqkMiuWdrS/43iqaifj6M="];
-    public $ll = "36.2048,138.2529"; //japan
+    public $base_uri;
+    public $headers;
+    public $ll;
+
+    public function __construct(){
+        $this->base_uri = env("VENUE_BASE_URI");
+        $this->headers = [ "Authorization" => env("VENUE_TOKEN")];
+        $this->ll = env("VENUE_LL");
+    }
 
     public function findPlace($search){
         $client = new Client(["base_uri" => $this->base_uri]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Library;
+namespace App\Services;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
@@ -11,8 +11,13 @@ class WeatherService
 {
     use Responser;
     use Locations;
-    public $base_uri = "api.openweathermap.org/data/2.5/";
-    public $appid = "eee9345bb041fd34756723aa51f840be";
+    public $base_uri;
+    public $appid;
+
+    public function __construct(){
+        $this->base_uri = env("WEATHER_BASE_URI");
+        $this->appid = env("WEATHER_APP_ID"); 
+    }
     
     public function searchWeather($id){
         $client = new Client(["base_uri" => $this->base_uri]);

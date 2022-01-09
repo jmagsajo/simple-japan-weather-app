@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Library\VenueService;
+use App\Services\VenueService;
 
 use App\Http\Traits\Responser;
 

@@ -4,7 +4,7 @@
 ><p>composer install</p>
 ><p>npm install</p>
 ><p>copy .env.example to .env then run key:generate</p>
-
+><p><b>NOTE:</b></p>
 ><p>api ids/keys are in .env.example</p>
 
 UI/UX:

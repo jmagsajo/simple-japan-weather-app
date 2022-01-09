@@ -5,5 +5,7 @@
 ><p>npm install</p>
 ><p>copy .env.example to .env then run key:generate</p>
 
+><p>api ids/keys are in .env.example</p>
+
 UI/UX:
 I'm not really good at UI/UX, but i did the simpliest design/color that i could do. Thanks!

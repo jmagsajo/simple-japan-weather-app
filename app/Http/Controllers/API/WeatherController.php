@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Services\WeatherService;
+use App\Services\Weather\WeatherInterface;
 
 use App\Http\Traits\Responser;
 
@@ -14,13 +14,15 @@ use App\Http\Requests\weatherSearchRequest;
 class WeatherController extends Controller
 {
     use Responser;
+    public $weather_service;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(WeatherInterface $weather_service)
     {
+        $this->weather_service = $weather_service;
     }
 
     /**
@@ -33,9 +35,7 @@ class WeatherController extends Controller
         $validated = $request->validated();
         
         $id = $request->input('id');
-        
-        $service = new WeatherService();
-        $res = $service->searchWeather($id);
+        $res = $this->weather_service->searchWeather($id);
         return $this->toJson('Success', $res, 200);
     }
 }

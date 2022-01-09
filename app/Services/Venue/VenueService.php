@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Venue;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use App\Http\Traits\Responser;
+use App\Services\Venue\VenueInterface;
 
-class VenueService
+class VenueService implements VenueInterface
 {
     use Responser;
     public $base_uri;

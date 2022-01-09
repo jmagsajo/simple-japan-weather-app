@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Weather;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use App\Http\Traits\Responser;
 use App\Http\Traits\Locations;
+use App\Services\Weather\WeatherInterface;
 
-class WeatherService
+class WeatherService implements WeatherInterface
 {
     use Responser;
     use Locations;
